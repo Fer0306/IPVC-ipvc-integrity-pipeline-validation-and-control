@@ -10,12 +10,12 @@
 
 ### Descripción  
 
-Propuesta conceptual y formalización inicial del método IPVC. 
-Incluye definición formal, arquitectura de check-points, 
-especificación técnica en tres niveles.
+Formalización inicial del método IPVC.  
+Incluye definición formal, especificación técnica en tres niveles, 
+arquitectura de check-points.  
 
 ---
-**© 2025 Fernando Flores Alvarado — RHC Protocol Core**  
+**© 2026 Fernando Flores Alvarado — IPVC (Integrity Pipeline Validation and Control)**  
 Este contenido es publicado bajo esquema de licencias dual  
 (*[Apache License 2.0](./LICENSE.md)* para código + *[Creative Commons BY 4.0](./LICENSE_CC.md)* para documentación).  
 
