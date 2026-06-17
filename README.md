@@ -131,7 +131,7 @@ Los cuatro pueden coexistir y reforzarse mutuamente dentro de una arquitectura i
 | Componente                             | Estado                 |
 | -------------------------------------- | ---------------------- |
 | Definición conceptual                  | ✅ Completado          |
-| Primera Publicación — propuesta        | ✅ Lista para publicar |
+| Primera Publicación — propuesta        | ✅ Publicada           |
 | Segunda Publicación — especificación técnica | ✅ Lista para publicar |
 | Propuesta OWASP                        | ✅ Lista               |
 | Especificación del manifiesto IPVC     | 🔲 Pendiente           |

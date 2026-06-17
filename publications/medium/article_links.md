@@ -12,10 +12,9 @@ Información detallada sobre versiones, fechas, estado y metadatos completos, co
 
 ## 📚 Publicaciones oficiales  
 
-| # | Título | Estado | Enlace |
-|---|---|---|---|
-| 1 | IPVC — Una propuesta de arquitectura de seguridad para pipelines CI/CD | ✅ Lista para publicar | *[enlace pendiente]* |
-| 2 | IPVC — Método de Control: Arquitectura y Especificación Técnica | ✅ Lista para publicar | *[enlace pendiente]* |
+| # | Título | Estado |
+|---|---|---|
+| 1 | [IPVC — Una propuesta de arquitectura de seguridad para pipelines CI/CD](https://medium.com/@fernandofa0306/ipvc-integrity-pipeline-validation-and-control-a88003d0c2fb) | ✅ Publicada |
 
 ---
 
