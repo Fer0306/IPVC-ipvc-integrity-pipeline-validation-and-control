@@ -13,13 +13,13 @@ Repositorio OWASP: https://github.com/OWASP/www-project-randomized-header-channe
 
 Descripción:
 
-Propuesta conceptual y formalización inicial del método IPVC. 
-Incluye definición formal, arquitectura de check-points, 
-especificación técnica en tres niveles.
+Formalización inicial del método IPVC.
+Incluye definición formal, especificación técnica en tres niveles, 
+arquitectura de check-points.
 
 Licencia:
 
-© 2025 Fernando Flores Alvarado — RHC Protocol Core
+© 2026 Fernando Flores Alvarado — IPVC (Integrity Pipeline Validation and Control)
 
 Este contenido es publicado bajo esquema de licencias dual:
 
