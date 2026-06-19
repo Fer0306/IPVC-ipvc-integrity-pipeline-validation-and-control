@@ -7,7 +7,7 @@
 
 **Autor:** Fernando Flores Alvarado  
 **Proyecto:** IPVC — Integrity Pipeline Validation and Control  
-**Licencia:** CC BY 4.0 (documentación)  
+**Licencia:** Apache 2.0 (código) + CC BY 4.0 (documentación)  
 Información detallada sobre versiones, fechas, estado y metadatos completos, consulta [`VERSION.md`](../VERSION.md).  
 
 ---
@@ -404,7 +404,11 @@ Cada ejecución de check-point genera un registro firmado e inmutable que incluy
 | Registro de Escáneres | Centralizar y clasificar herramientas de escaneo | Repositorio externo referenciado por el manifiesto |
 
 ---
-**© 2026 Fernando Flores Alvarado — IPVC (Integrity Pipeline Validation and Control)**  
-Publicado bajo [Creative Commons BY 4.0](../LICENSE_CC.md).  
 
+## 📜 Licencia
+
+- **Código fuente y scripts:** [Apache License 2.0](../LICENSE.md)
+- **Documentación y diagramas:** [Creative Commons BY 4.0](../LICENSE_CC.md)
+
+> © 2026 Fernando Flores Alvarado — IPVC (Integrity Pipeline Validation and Control)  
 > *“Compartir con responsabilidad es inspirar para construir el futuro.”*  
