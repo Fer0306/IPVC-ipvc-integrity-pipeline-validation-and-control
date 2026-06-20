@@ -30,21 +30,46 @@ Establecer los cimientos técnicos y documentales del proyecto, alineados con es
 - ✅ Redacción de documentación base (`README.md`, `architecture-proposal.md`, `control-method-specification.md`, `formal-definition.md`, `project-origin.md`, `repository-structure.md`, `fundamental-principles.md`, `article_links.md`)
 - ✅ Creación de esquema dual de licencias (Apache 2.0 + CC BY 4.0)
 - ✅ Publicación inicial en GitHub y validación estructural
+- ✅ Creación de la publicación 1 — Publicada durante la fase inicial del proyecto.
+- ✅ Creación de la publicación 2 — Publicada posteriormente como parte de las actividades de difusión y presentación de la propuesta.
 - ✅ Redactar la propuesta formal de este proyecto para OWASP
 
 **Resultado esperado:**  
 Repositorio IPVC — Integrity Pipeline Validation and Control completamente documentado y funcional.  
 
+### 🗂️ Cronología de investigación y difusión
+
+Durante la fase de investigación y construcción inicial del repositorio IPVC, se desarrollaron de forma paralela diversos materiales técnicos y de divulgación.
+
+#### Investigación y documentación
+
+* Desarrollo de la propuesta formal para OWASP.
+* Elaboración de la justificación técnica del proyecto.
+* Redacción de la documentación fundacional del método IPVC.
+* Definición del modelo de licenciamiento dual:
+
+  * Apache License 2.0 para código y pruebas de concepto.
+  * Creative Commons BY 4.0 para documentación.
+
+#### Difusión pública
+
+Las publicaciones relacionadas con IPVC fueron redactadas durante el proceso de investigación y construcción del repositorio, aunque su publicación pública se realizó de forma gradual conforme avanzó la madurez del proyecto.
+
+* Publicación 1 — Publicada durante la fase inicial del proyecto.
+* Publicación 2 — Publicada posteriormente como parte de las actividades de difusión y presentación de la propuesta.
+
+Esta cronología permite diferenciar claramente entre la fecha de creación de los materiales y la fecha de su publicación pública.
+
 ---
 
-## 🔬 Fase 2 — Propuesta para OWASP (Q2 2026)  
+## 🔬 Fase 2 — Preparación de propuesta para OWASP (Q2 2026)  
 
 **Objetivo:**  
 Presentar la **propuesta formal** ante el comité de proyectos OWASP, con documentación de diferenciación técnica completa.  
 
 **Tareas clave:**  
 - ✅ Redacción de propuesta formal OWASP (borrador v2.0)
-- ✅ Elaboración de `docs/technical-justification.md` — diferenciación técnica respecto a SLSA, Sigstore y OWASP CI/CD Security Cheat Sheet
+- ✅ Elaboración de `docs/owasp/technical-justification.md` — diferenciación técnica respecto a SLSA, Sigstore y OWASP CI/CD Security Cheat Sheet
 - ✅ Incorporación de la OWASP CI/CD Security Cheat Sheet como marco de referencia en la arquitectura de diferenciación
 - 🔲 Confirmación de co-líder del proyecto (búsqueda activa en comunidad OWASP DevSecOps)
 - 🔲 Envío formal mediante formulario oficial: [New Project Request — OWASP Contact Us](https://contact.owasp.org/)
