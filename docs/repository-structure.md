@@ -24,7 +24,6 @@ estable ante cambios en la organización interna del repositorio.
 
 ```
 IPVC/
-
 │
 ├── 🛠️ assets/                           → Recursos para el repositorio.
 │   ├── images/                          → Recursos visuales (diagramas, esquemas)
@@ -35,6 +34,12 @@ IPVC/
 │
 ├── 📘 docs/                             → Documentación técnica, conceptual y referencias.
 │   │
+│   ├── 🏛️ owasp/                          → Documentación relacionada con el proceso de
+|   |   |                                    evaluación, adopción e integración del
+|   |   |                                    proyecto dentro de OWASP.
+|   │   ├── owasp-project-proposal.md          → Propuesta formal presentada a OWASP.
+|   │   └── technical-justification.md         → Justificación técnica
+|   |
 │   ├── architecture-proposal.md           → Propuesta de arquitectura de seguridad
 │   ├── control-method-specification.md    → Definición Formal del método de Control:
 |   |                                        Arquitectura y Especificación Técnica

@@ -34,10 +34,13 @@ Este documento sigue la convención **SemVer (Semantic Versioning)** en el forma
   - `/docs/fundamental-principles.md` — Principios Fundamentales
   - `/docs/project-origin.md` — Historia y origen del proyecto
   - `/docs/repository-structure.md` — Estructura completa del repositorio
-  - `/publications/medium/article_links.md` — Publicaciones.
+  - `/docs/owasp/technical-justification.md` — Justificación Técnica formal para OWASP.
+  - `/docs/owasp/owasp-project-proposal.md` — Propuesta formal para OWASP.
+  - `/publications/medium/article_links.md` — Publicaciones y material de difusión.
 - ⚖️ Inclusión de licencias:
   - `LICENSE` — Apache License 2.0 (código y PoC).
   - `LICENSE_CC.md` — Creative Commons BY 4.0 (documentación).
+- 📰 Publicación de las primeras dos publicaciones de divulgación relacionadas con IPVC.
 - 📄 Creación de archivos de atribución y control:
   - `VERSION` — Detalle técnico y simbólico de la versión.
   - `.gitignore` — Exclusión de archivos locales.

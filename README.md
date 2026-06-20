@@ -119,6 +119,17 @@ Los cuatro pueden coexistir y reforzarse mutuamente dentro de una arquitectura i
 | [docs/formal-definition.md](./docs/formal-definition.md)             | Definición formal del método           |
 | [docs/fundamental-principles.md](./docs/fundamental-principles.md)   | Principios Fundamentales               |
 
+---
+
+## 🏛️ Documentación para OWASP
+
+| Documento | Descripción |
+|------------|------------|
+| [docs/owasp/owasp-project-proposal.md](./docs/owasp/owasp-project-proposal.md) | Propuesta formal presentada a OWASP |
+| [docs/owasp/technical-justification.md](./docs/owasp/technical-justification.md) | Justificación técnica |
+
+---
+
 ### 🌐 Publicaciones externas  
 
 > Medium:
@@ -128,15 +139,15 @@ Los cuatro pueden coexistir y reforzarse mutuamente dentro de una arquitectura i
 
 ## 📊 Estado del proyecto  
 
-| Componente                             | Estado                 |
-| -------------------------------------- | ---------------------- |
-| Definición conceptual                  | ✅ Completado          |
-| Primera Publicación — propuesta        | ✅ Publicada           |
-| Segunda Publicación — especificación técnica | ✅ Lista para publicar |
-| Propuesta OWASP                        | ✅ Lista               |
-| Especificación del manifiesto IPVC     | 🔲 Pendiente           |
-| Herramienta `ipvc-cli`                 | 🔲 Pendiente           |
-| Guías CI/CD                            | 🔲 Pendiente           |
+| Componente                                   | Estado                 |
+| -------------------------------------------- | ---------------------- |
+| Definición conceptual                        | ✅ Completado          |
+| Primera Publicación — propuesta              | ✅ Publicada           |
+| Segunda Publicación — especificación técnica | ✅ Publicada           |
+| Propuesta OWASP                              | ✅ Lista               |
+| Especificación del manifiesto IPVC           | 🔲 Pendiente           |
+| Herramienta `ipvc-cli`                       | 🔲 Pendiente           |
+| Guías CI/CD                                  | 🔲 Pendiente           |
 
 ---
 
