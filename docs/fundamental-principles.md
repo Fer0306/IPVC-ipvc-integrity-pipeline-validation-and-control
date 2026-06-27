@@ -43,6 +43,7 @@ El Manifiesto puede incluir:
 * Artifacts esperados
 * Reglas de validación
 * Huellas criptográficas de referencia (hashes)
+* Hash de origen del código fuente (commit hash de control de versiones)
 * Metadatos de versión
 * Información de contexto del pipeline
 
@@ -166,6 +167,9 @@ Toda implementación de IPVC debe preservar los siguientes principios:
 
 5. **Detención ante discrepancias**
    Una discrepancia crítica debe impedir la continuación automática del pipeline.
+
+6. **Anclaje de origen**
+   La primera etapa del pipeline debe estar criptográficamente vinculada al hash de origen del código fuente (commit hash), estableciendo el punto de partida verificable de toda la cadena de custodia.
 
 ---
 **© 2026 Fernando Flores Alvarado — IPVC (Integrity Pipeline Validation and Control)**  

@@ -87,6 +87,7 @@ El manifiesto declara:
 
 - El estado esperado de cada etapa
 - Los hashes criptográficos de referencia para cada artifact
+- El hash de origen del código fuente (commit hash), estableciendo el punto de anclaje inicial de la cadena de custodia
 - Las reglas de validación para cada check-point
 - Los metadatos de versión y contexto del pipeline
 
@@ -117,6 +118,8 @@ Variables operativas que pueden variar entre ejecuciones sin afectar la integrid
 Por ejemplo, diferencias en el tiempo de ejecución pueden producirse de forma natural debido a procesos concurrentes o variaciones de carga en el sistema, sin representar necesariamente una anomalía de seguridad.  
 
 Los criterios exactos utilizados para la generación y validación de huellas digitales serán desarrollados con mayor detalle en la segunda publicación de esta serie.  
+
+Adicionalmente, el primer check-point del pipeline valida el origen del código fuente contra el hash de commit declarado en el manifiesto. Esto establece una cadena de custodia completa: desde el commit que originó la ejecución hasta el artifact final desplegado, sin puntos ciegos entre el control de versiones y el proceso de validación de IPVC.
 
 ---
 
