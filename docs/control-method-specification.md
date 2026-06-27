@@ -1,3 +1,4 @@
+control-method-specification.md:
 > ℹ️ **Note:** This document is written in Spanish. You can use your browser to translate it into English.
 > The Spanish version is preserved intentionally as part of the project's authorship and intellectual identity.
 
@@ -109,6 +110,7 @@ Archivo de referencia en formato estructurado (JSON o YAML) que declara:
 ipvc_manifest:
   version: "1.0"
   pipeline_id: "proyecto-ejemplo"
+  commit_hash_origen: "sha256:9f8a3c..."
   fecha_declaracion: "2026-06-08"
   etapas:
     - nombre: "revision_pr"
@@ -117,6 +119,7 @@ ipvc_manifest:
         - no_codigo_ofuscado
         - no_github_actions_externas
         - no_dependencias_no_declaradas
+        - commit_hash_coincide_con_origen
     - nombre: "build"
       hash_esperado: "sha256:b7c1..."
       reglas:
@@ -148,6 +151,9 @@ Componente que calcula la huella digital (hash criptográfico SHA-256) del resul
 - Tiempo exacto de ejecución
 - Identificador del servidor
 - Variables de entorno del sistema operativo
+
+**Variable adicional para la primera etapa:**
+- Commit hash de origen (control de versiones) — se incluye únicamente en el cálculo de la huella de la primera etapa del pipeline (`revision_pr`), estableciendo el punto de anclaje entre el código fuente y la cadena de validaciones subsecuentes.
 
 ### 3. El Check-Point
 
@@ -280,7 +286,7 @@ Desarrollador que usa ese recurso:
 Sea `M` el Manifiesto IPVC, definido como:
 
 ```
-M = { id_pipeline, version, fecha, E }
+M = { id_pipeline, version, fecha, c₀, E }
 
 donde E = { e₁, e₂, ..., eₙ } es el conjunto ordenado de etapas declaradas
 
@@ -288,6 +294,7 @@ cada eᵢ ∈ E tiene la forma:
   eᵢ = { nombre, hᵢ_esperado, Rᵢ }
 
 donde:
+  c₀ = commit hash de origen del código fuente, declarado a nivel de M
   hᵢ_esperado = hash criptográfico SHA-256 del resultado esperado de la etapa i
   Rᵢ = conjunto de reglas de validación para la etapa i
 ```
@@ -297,13 +304,14 @@ donde:
 Sea `G` la función generadora de huellas, definida como:
 
 ```
-G(aᵢ, eᵢ, v, f) → hᵢ_real
+G(aᵢ, eᵢ, v, f, c₀) → hᵢ_real
 
 donde:
   aᵢ = artifact o resultado producido por la etapa i
   eᵢ = identificador de la etapa
   v  = versión del pipeline
   f  = fecha de ejecución (formato YYYY-MM-DD, sin hora ni segundos)
+  c₀ = commit hash de origen del código fuente (solo aplica cuando i = 1, primera etapa)
 
 G implementa SHA-256 sobre la concatenación estructurada de los parámetros anteriores.
 ```
@@ -324,7 +332,10 @@ CP(hᵢ_real, hᵢ_esperado, Rᵢ) → { PASS | FAIL, reporte }
 Algoritmo:
 
   1. Obtener hᵢ_esperado y Rᵢ desde el Manifiesto M
-  2. Calcular hᵢ_real = G(aᵢ, eᵢ, v, f)
+  2. SI i = 1 (primera etapa):
+       Calcular hᵢ_real = G(aᵢ, eᵢ, v, f, c₀)
+     SINO:
+       Calcular hᵢ_real = G(aᵢ, eᵢ, v, f)
   3. Evaluar reglas: ∀ r ∈ Rᵢ → verificar_regla(r, aᵢ)
   4. Si hᵢ_real == hᵢ_esperado AND todas las reglas en Rᵢ son satisfechas:
        → retornar PASS
@@ -347,7 +358,10 @@ FUNCIÓN ejecutar_pipeline_ipvc(codigo_fuente, manifiesto_url):
     
     resultado_eᵢ ← ejecutar_etapa(eᵢ, codigo_fuente)
     
-    hᵢ_real ← G(resultado_eᵢ, eᵢ.nombre, M.version, fecha_hoy())
+    SI eᵢ es la primera etapa:
+      hᵢ_real ← G(resultado_eᵢ, eᵢ.nombre, M.version, fecha_hoy(), M.commit_hash_origen)
+    SINO:
+      hᵢ_real ← G(resultado_eᵢ, eᵢ.nombre, M.version, fecha_hoy())
     
     decision ← CP(hᵢ_real, eᵢ.hash_esperado, eᵢ.reglas)
     
@@ -379,6 +393,26 @@ El pipeline IPVC es una secuencia estrictamente ordenada. No existe mecanismo pa
 
 **Propiedad 4 — No repudio:**
 Cada ejecución de check-point genera un registro firmado e inmutable que incluye la huella real, la huella esperada, el resultado de la validación y la fecha. Este registro permite auditar retroactivamente cualquier ejecución del pipeline.
+
+**Propiedad 5 — Anclaje de origen:**
+La huella de la primera etapa `h₁_real` depende criptográficamente del commit hash de origen `c₀`. Si el código ejecutado en el pipeline no corresponde al commit declarado en el Manifiesto, entonces `h₁_real ≠ h₁_esperado`, lo que produce FAIL en el primer check-point y establece la cadena de custodia completa desde el origen del código fuente hasta el artifact final.
+
+---
+![Figura 5](./../assets/images/publications/medium/control-method-specification/Anclaje_Origen_Git_Pipeline.svg)  
+*Figura 5. Anclaje de origen: el commit hash de Git ancla la primera etapa del pipeline, y el Manifiesto IPVC valida cada check-point subsecuente contra ese punto de partida.*
+---
+
+commit_hash (Git)
+        │
+        ▼
+┌─────────────────────────────┐
+│         PIPELINE             │
+│  [build] → CP1 → [test] → CP2 → [deploy] → CP3
+└─────────────────────────────┘
+        │
+        ▼
+   IPVC Manifest
+   (valida CP1, CP2, CP3 contra commit_hash de origen)
 
 ## Consideraciones criptográficas
 

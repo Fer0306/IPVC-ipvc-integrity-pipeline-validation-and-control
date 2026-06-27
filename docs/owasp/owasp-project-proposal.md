@@ -93,6 +93,8 @@ IPVC es el único marco que propone validación formal de integridad en cada tra
 
 Ningún proyecto OWASP existente aborda esta capa específica del problema de la cadena de suministro. La justificación técnica detallada de por qué IPVC debe existir como proyecto independiente se presenta en el documento adjunto: **"Technical Justification for OWASP — IPVC"**.  
 
+La especificación formal del Manifiesto IPVC ya incorpora, como parte de su diseño arquitectónico, el anclaje criptográfico al commit de origen del código fuente (control de versiones). Esto significa que la primera etapa del pipeline queda vinculada verificablemente al commit que originó la ejecución, estableciendo una cadena de custodia completa desde el código fuente hasta el artifact final desplegado — sin puntos ciegos entre el control de versiones y el proceso de validación. Esta decisión arquitectónica ya está documentada en la especificación técnica del método (ver Publicación 2 en la sección de Materiales de referencia).
+
 ---
 
 ## 6. Audiencia objetivo  

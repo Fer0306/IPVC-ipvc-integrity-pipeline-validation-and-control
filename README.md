@@ -60,34 +60,37 @@ IPVC busca cerrar esa brecha.
 ## 🧩 El flujo con check-points  
 
 ```text
-Desarrollador
-      │
-      ▼
- Pull Request
-      │
-      ▼
+Git (commit_hash_origen)
+         │
+         ▼
+   Desarrollador
+         │
+         ▼
+    Pull Request
+         │
+         ▼
+ [CHECK-POINT] ← valida contra manifiesto (incluye commit_hash_origen)
+         │
+         ▼
+       Build
+         │
+         ▼
  [CHECK-POINT] ← valida contra manifiesto
-      │
-      ▼
-    Build
-      │
-      ▼
+         │
+         ▼
+     Pruebas
+         │
+         ▼
  [CHECK-POINT] ← valida contra manifiesto
-      │
-      ▼
-   Pruebas
-      │
-      ▼
- [CHECK-POINT] ← valida contra manifiesto
-      │
-      ▼
+         │
+         ▼
  Escaneo de Seguridad
-      │
-      ▼
+         │
+         ▼
  [CHECK-POINT] ← valida contra manifiesto
-      │
-      ▼
-    Deploy
+         │
+         ▼
+      Deploy
 ```
 
 ---
