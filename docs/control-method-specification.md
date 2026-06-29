@@ -1,4 +1,3 @@
-control-method-specification.md:
 > ℹ️ **Note:** This document is written in Spanish. You can use your browser to translate it into English.
 > The Spanish version is preserved intentionally as part of the project's authorship and intellectual identity.
 
@@ -401,18 +400,6 @@ La huella de la primera etapa `h₁_real` depende criptográficamente del commit
 ![Figura 5](./../assets/images/publications/medium/control-method-specification/Anclaje_Origen_Git_Pipeline.svg)  
 *Figura 5. Anclaje de origen: el commit hash de Git ancla la primera etapa del pipeline, y el Manifiesto IPVC valida cada check-point subsecuente contra ese punto de partida.*
 ---
-
-commit_hash (Git)
-        │
-        ▼
-┌─────────────────────────────┐
-│         PIPELINE             │
-│  [build] → CP1 → [test] → CP2 → [deploy] → CP3
-└─────────────────────────────┘
-        │
-        ▼
-   IPVC Manifest
-   (valida CP1, CP2, CP3 contra commit_hash de origen)
 
 ## Consideraciones criptográficas
 
